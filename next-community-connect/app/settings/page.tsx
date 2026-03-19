@@ -50,7 +50,6 @@ export default function SettingsPage() {
         badge="Inclusive Design"
         staticTitle="Accessibility Settings"
         subtitle="Customize your experience for comfort and clarity. All changes save automatically and apply site-wide."
-        backgroundImage="/img/page-5.jpg"
       />
 
       <section className="py-24 bg-[var(--section-bg)]">

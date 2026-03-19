@@ -53,10 +53,12 @@ function Hero({
       className="w-full min-h-screen flex items-center justify-center relative overflow-hidden"
       style={{
         backgroundColor: '#022747',
-        backgroundImage: `url('${backgroundImage ?? '/img/avess-berge-ua2IF9HNaXs-unsplash.png'}')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
+        ...(backgroundImage ? {
+          backgroundImage: `url('${backgroundImage}')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        } : {}),
       }}
     >
       {/* Dark overlay for readability - skip on homepage (no backgroundImage) */}

@@ -27,7 +27,17 @@ const sources = [
   { resource: 'DM Sans (Google Fonts)', type: 'Typography', license: 'Open Font License', url: 'fonts.google.com' },
   { resource: 'Outfit (Google Fonts)', type: 'Typography', license: 'Open Font License', url: 'fonts.google.com' },
   { resource: 'Syne (Google Fonts)', type: 'Typography', license: 'Open Font License', url: 'fonts.google.com' },
-  { resource: 'Unsplash (hero background images)', type: 'Photography', license: 'Unsplash License (free)', url: 'unsplash.com' },
+  { resource: 'Resources page – parallax (library3.jpg)', type: 'Photography', license: 'Unsplash License (free)', url: 'unsplash.com/photos/NIJuEQw0RKg' },
+  { resource: 'Resources page – parallax (foodpantry5.jpg)', type: 'Photography', license: 'Unsplash License (free)', url: 'unsplash.com/photos/Z8UgB80_46w' },
+  { resource: 'Site hero – page background', type: 'Photography', license: 'Unsplash License (free)', url: 'unsplash.com/photos/Zyx1bK9mqmA' },
+  { resource: 'Resources page – parallax (heartwithhands6.jpg)', type: 'Photography', license: 'Unsplash License (free)', url: 'unsplash.com/photos/cAtzHUz7Z8g' },
+  { resource: 'Resources page – parallax (community7.jpg)', type: 'Photography', license: 'Pexels License (free)', url: 'beginatbothell.com/wp-content/uploads/2023/09/pexels-kelly-2876511.jpg' },
+  { resource: 'Site hero – page background', type: 'Photography', license: 'Unsplash License (free)', url: 'unsplash.com/photos/S5pFhDxUXyw' },
+  { resource: 'Resources page – parallax (playground1.jpg)', type: 'Photography', license: 'Unsplash License (free)', url: 'unsplash.com/photos/8NymO2MErVI' },
+  { resource: 'Resources page – parallax (cleanup4.jpg)', type: 'Photography', license: 'Unsplash License (free)', url: 'unsplash.com/photos/CIItgnBEOgw' },
+  { resource: 'Resources page – parallax (cleanup4.jpg alt)', type: 'Photography', license: 'Unsplash License (free)', url: 'unsplash.com/photos/3k3l2brxmwQ' },
+  { resource: 'Resources page – parallax (library3.jpg alt)', type: 'Photography', license: 'Unsplash License (free)', url: 'unsplash.com/photos/zeH-ljawHtg' },
+  { resource: 'Resources page – parallax (garden2.jpg)', type: 'Photography', license: 'Unsplash License (free)', url: 'unsplash.com/photos/bY_q4VodUc0' },
   { resource: 'Bothell, WA geographic and org data', type: 'Reference', license: 'Public domain', url: 'bothellwa.gov' },
   { resource: 'KCLS (King County Library System)', type: 'Reference', license: 'Public domain', url: 'kcls.org' },
   { resource: 'Northshore School District', type: 'Reference', license: 'Public domain', url: 'nsd.org' },
@@ -73,7 +83,6 @@ export default function DocumentationPage() {
         staticTitle="Copyright &amp; References"
         subtitle="Student copyright checklist, work log, and all sources cited for Community Connect.
         * Note: This page does not have dark mode functionality so as to maintain clarity"
-        backgroundImage="/img/page-2.jpg"
       />
 
       <section className="py-24" style={{ backgroundColor: BG }}>
@@ -136,6 +145,29 @@ export default function DocumentationPage() {
                   </p>
                 </div>
               </div>
+            </div>
+          </motion.div>
+
+          {/* STUDENT COPYRIGHT CHECKLISTS PDF */}
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <h2 style={h2Style}>Student Copyright Checklists</h2>
+            <div className="rounded-2xl overflow-hidden border" style={{ borderColor: BORDER }}>
+              <iframe
+                src="/TSA_Student_Copyright_Checklists.pdf"
+                title="TSA Student Copyright Checklists"
+                className="w-full"
+                style={{ height: '860px', border: 'none' }}
+              />
+            </div>
+            <div className="mt-3 flex justify-end">
+              <a
+                href="/TSA_Student_Copyright_Checklists.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ fontFamily: 'var(--font-space)', fontSize: '12px', color: LINK }}
+              >
+                Open PDF in new tab
+              </a>
             </div>
           </motion.div>
 
