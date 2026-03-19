@@ -337,10 +337,10 @@ function EventModal({ event, onClose }: { event: EventType; onClose: () => void 
               { label: 'Who', value: event.audience },
             ].map(item => (
               <div key={item.label} className="rounded-xl p-3 border border-slate-100 bg-slate-50 event-detail-item">
-                <div className="event-detail-label" style={{ fontFamily: 'var(--font-space)', fontSize: '10px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: '#94a3b8', marginBottom: '4px' }}>
+                <div style={{ fontFamily: 'var(--font-space)', fontSize: '10px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: '#008fb5', marginBottom: '4px' }}>
                   {item.label}
                 </div>
-                <div className="event-detail-value" style={{ fontFamily: 'var(--font-space)', fontSize: '12px', fontWeight: 600, color: '#1e293b' }}>
+                <div style={{ fontFamily: 'var(--font-space)', fontSize: '12px', fontWeight: 600, color: '#008fb5' }}>
                   {item.value}
                 </div>
               </div>
