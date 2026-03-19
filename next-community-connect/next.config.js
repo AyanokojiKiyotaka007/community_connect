@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  distDir: '/tmp/next-community-connect-build',
   images: {
     remotePatterns: [
       {
@@ -10,6 +9,4 @@ const nextConfig = {
     ],
   },
 }
-
 module.exports = nextConfig
-
