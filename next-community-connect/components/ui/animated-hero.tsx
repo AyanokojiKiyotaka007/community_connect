@@ -66,6 +66,8 @@ function Hero({
         } : {}),
       }}
     >
+      {/* Solid blue cover when no image wanted */}
+      {backgroundImage === '' && <div className="absolute inset-0" style={{ backgroundColor: '#011629' }} />}
       {/* Dark overlay for readability - skip on homepage (no backgroundImage) */}
       {backgroundImage && <div className="absolute inset-0 bg-sky-950/60" />}
       {/* Background Effects */}
