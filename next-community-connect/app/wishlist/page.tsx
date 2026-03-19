@@ -594,9 +594,9 @@ export default function DonatePage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 md:divide-x divide-slate-100">
             {[
-              { value: totalRaised, prefix: '$', label: 'Total Raised', sub: `across ${STATIC_CAUSES.length} active causes`, icon: <TrendingUp size={18} />, color: '#085D8A' },
-              { value: totalSupporters, prefix: '', label: 'Community Donors', sub: 'and growing every day', icon: <Users size={18} />, color: '#1A7A4A' },
-              { value: overallPercent, prefix: '', suffix: '%', label: 'Overall Goal Progress', sub: `$${totalGoal.toLocaleString()} total target`, icon: <Heart size={18} />, color: '#B83A6A' },
+              { value: totalRaised, prefix: '$', label: 'Total Raised', sub: `across ${STATIC_CAUSES.length} active causes`, icon: <TrendingUp size={18} />, color: '#16919f' },
+              { value: totalSupporters, prefix: '', label: 'Community Donors', sub: 'and growing every day', icon: <Users size={18} />, color: '#16919f' },
+              { value: overallPercent, prefix: '', suffix: '%', label: 'Overall Goal Progress', sub: `$${totalGoal.toLocaleString()} total target`, icon: <Heart size={18} />, color: '#16919f' },
             ].map((stat, i) => (
               <motion.div key={stat.label}
                 initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}

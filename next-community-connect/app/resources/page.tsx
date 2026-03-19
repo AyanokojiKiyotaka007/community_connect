@@ -181,9 +181,9 @@ export default function ResourcesPage() {
   const DARK_CARD = {
     bg:            '#022747',
     border:        'rgba(36,153,214,0.25)',
-    textPrimary:   '#C6EBFF',
-    textSecondary: '#90D4F7',
-    textLink:      '#90D4F7',
+    textPrimary:   '#16919f',
+    textSecondary: '#16919f',
+    textLink:      '#16919f',
     detailsBg:     'rgba(1,22,41,0.6)',
     detailsBorder: 'rgba(36,153,214,0.2)',
     toggleBorder:  'rgba(36,153,214,0.2)',
