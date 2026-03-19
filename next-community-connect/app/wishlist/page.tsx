@@ -30,14 +30,6 @@ type Cause = {
   emoji: string
 }
 
-type Donation = {
-  id: string
-  cause_id: string
-  user_id: string
-  amount: number
-  created_at: string
-}
-
 // ─── Static fallback data (shown instantly, then hydrated from DB) ────────────
 
 const STATIC_CAUSES: Cause[] = [
@@ -289,7 +281,7 @@ function StripePaymentForm({ cause, amount, onSuccess, onBack, tc, dark }: {
         {paying ? <><Loader2 size={16} className="animate-spin" /> Processing…</> : <><Lock size={16} /> Pay ${amount}</>}
       </button>
       <p style={{ fontFamily: 'var(--font-dm-sans)', fontSize: '11px', color: tc.m, textAlign: 'center', marginTop: '10px' }}>
-        Secured by Stripe · SSL encrypted
+        Secured by Stripe · SSL encrypted · Test mode — no real charges
       </p>
     </div>
   )
@@ -297,11 +289,10 @@ function StripePaymentForm({ cause, amount, onSuccess, onBack, tc, dark }: {
 
 // ─── Donation Modal ───────────────────────────────────────────────────────────
 
-function DonationModal({ cause, onClose, onDonate, saving }: {
+function DonationModal({ cause, onClose, onDonate }: {
   cause: Cause
   onClose: () => void
   onDonate: (amount: number) => Promise<void>
-  saving: boolean
 }) {
   const [amount, setAmount] = useState(25)
   const [custom, setCustom] = useState('')
@@ -583,7 +574,6 @@ export default function DonatePage() {
   const [dbError, setDbError] = useState('')
   const [selected, setSelected] = useState<Cause | null>(null)
   const [showAuthModal, setShowAuthModal] = useState(false)
-  const [saving, setSaving] = useState(false)
   const [cardImages, setCardImages] = useState<Record<string, string>>({})
   const imageInputRefs = useRef<Record<string, HTMLInputElement | null>>({})
 
@@ -639,7 +629,6 @@ export default function DonatePage() {
   // ── Donate handler ────────────────────────────────────────
   const handleDonate = async (amount: number) => {
     if (!selected || !user?.id) return
-    setSaving(true)
     // Optimistic update
     setDbTotals(prev => ({
       ...prev,
@@ -662,8 +651,6 @@ export default function DonatePage() {
       }))
       setUserDonations(prev => ({ ...prev, [selected.id]: (prev[selected.id] || 0) - amount }))
       throw new Error('Donation failed — please try again.')
-    } finally {
-      setSaving(false)
     }
   }
 
@@ -901,7 +888,6 @@ export default function DonatePage() {
             cause={selected}
             onClose={() => setSelected(null)}
             onDonate={handleDonate}
-            saving={saving}
           />
         )}
       </AnimatePresence>
