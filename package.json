@@ -33,6 +33,7 @@
     "javascript"
   ],
   "devDependencies": {
+    "typescript": "^5.9.3",
     "uglify-js": "^2.7.4"
   },
   "dependencies": {
